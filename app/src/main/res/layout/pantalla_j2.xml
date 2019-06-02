@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".PantallaJ2">
+
+    <TextView
+        android:id="@+id/iniciar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="¡AGÍTAME!"
+        android:textSize="30dp"
+        android:textColor="#1e00e0"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/listo12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="¡Listo!"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/nombre12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="TU NOMBRE"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/objeto12"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/blanco"
+        />
+
+    <TextView
+        android:id="@+id/listo22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Esperando al retado..."
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/nombre22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="EL OTRO"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/objeto22"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/blanco"
+        />
+
+    <TextView
+        android:id="@+id/lblGanadorJ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡GANADOR!"
+        android:textColor="#3F51B5"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/lblPerdedorJ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡PERDEDOR!"
+        android:textColor="#F44336"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+</LinearLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "901147410736",
+    "firebase_url": "https://tpdm-u5-practica2.firebaseio.com",
+    "project_id": "tpdm-u5-practica2",
+    "storage_bucket": "tpdm-u5-practica2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901147410736:android:9dcab541737b3eb4",
+        "android_client_info": {
+          "package_name": "mx.edu.ittepic.anelcruzag.tpdm_u5_practica2_equipo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901147410736-8se8jfhuhcemdp9dn5jgkpbmip8f24qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGnZt9K5cPvNyfNNthMFyw1P-400T8g98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901147410736-8se8jfhuhcemdp9dn5jgkpbmip8f24qp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

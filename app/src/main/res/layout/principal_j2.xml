@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".PrincipalJ2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Piedra, papel o tijera"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:id="@+id/lblTitulo"
+
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_ppt"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresa número telefono a retar:"
+        android:id="@+id/lblTelefonoJ2"
+        android:visibility="gone"
+        />
+
+    <EditText
+        android:id="@+id/txtTelefonoJ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Telefono a retar"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btnRetarJ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Retar"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresa nombre persona a retar:"
+        android:id="@+id/lblNombreJ2"
+        android:visibility="gone"
+        />
+
+    <EditText
+        android:id="@+id/txtNombreJ2"
+        android:layout_width="match_parent"
+        android:hint="Nombre jugador retado"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btnIngresarJ2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:visibility="gone"
+        />
+</LinearLayout>
