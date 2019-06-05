@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class PantallaJ1 extends AppCompatActivity {
     private DatabaseReference realtime;
     String[] nom = {"", "piedra", "papel", "tijera"};
-    TextView nombre_J1, listo_J1, nombre_J2, listo_J2, ganadorJ1, perdedorJ1, iniciar;
+    TextView nombre_J1, estado_J1, nombre_J2, estado_J2, ganadorJ1, perdedorJ1, iniciar;
     ImageView objeto1, objeto2;
     SensorManager sensorManager;
     Sensor sensor;
@@ -37,10 +37,10 @@ public class PantallaJ1 extends AppCompatActivity {
         setContentView(R.layout.pantalla_j1);
 
         nombre_J1 = findViewById(R.id.lblNombre_J1);
-        listo_J1 = findViewById(R.id.listo1);
+        estado_J1 = findViewById(R.id.lblEstado_J1);
 
         nombre_J2 = findViewById(R.id.lblNombre_J2);
-        listo_J2 = findViewById(R.id.listo2);
+        estado_J2 = findViewById(R.id.lblEstado_J2);
 
         ganadorJ1 = findViewById(R.id.lblGanadorJ1);
         perdedorJ1 = findViewById(R.id.lblPerdedorJ1);
@@ -67,17 +67,11 @@ public class PantallaJ1 extends AppCompatActivity {
                 if (iniciar.getVisibility() == View.VISIBLE) {
                     if (x < -5 && contador == 0) {
                         contador++;
-                        // Colorear el logo_ppt de color Gris
-                        //getWindow().getDecorView().setBackgroundColor(Color.GRAY);
                     }//if
                     else if (x > 5 && contador == 1) {
                         contador++;
-                        // Colorear el logo_ppt de color Rojo
-                        //getWindow().getDecorView().setBackgroundColor(Color.RED);
                     }//else if
                     if (contador == 2) {
-                        // Reproducir un sonido
-                        //sonido();
                         int num = (int) ((Math.random() * 3) + 1);
                         System.out.println("RANDOM: " + num);
                         establecer_img(num);
@@ -122,21 +116,19 @@ public class PantallaJ1 extends AppCompatActivity {
                 if (juego.ready2.equals("")) {
                     nombre_J2.setVisibility(View.INVISIBLE);
                     iniciar.setVisibility(View.INVISIBLE);
-                    listo_J2.setText("Esperando ...");
-                    listo_J2.setTextColor(Color.rgb(0, 0, 0));
+                    estado_J2.setText("Esperando...");
+                    estado_J2.setTextColor(Color.rgb(0, 0, 0));
                 }//if
                 else {
-                    listo_J2.setText("¡Listo!");
+                    estado_J2.setText("¡Listo!");
                     nombre_J2.setVisibility(View.VISIBLE);
                     nombre_J2.setText("" + juego.sobre2);
-                    listo_J2.setTextColor(Color.rgb(76, 175, 80));
                     iniciar.setVisibility(View.VISIBLE);
                 }//else
                 nombre_J1.setText("" + juego.sobre1);
                 if (juego.finish.equals("")) {
                 }// if
                 metodoGanador(juego.objeto1, juego.objeto2);
-                //get Objetos del jugador 2
                 if (juego.objeto2.equals("1")) {
                     // Piedra
                     establecer_img1(1);
@@ -148,11 +140,7 @@ public class PantallaJ1 extends AppCompatActivity {
                 else if (juego.objeto2.equals("3")) {
                     //Tijera
                     establecer_img1(3);
-
                 }//else if
-                if (ganadorJ1.getVisibility() == View.VISIBLE) {
-                    Toast.makeText(PantallaJ1.this,"Terminar el juego!",Toast.LENGTH_LONG).show();
-                }//if
             }// onDataChange
 
             @Override

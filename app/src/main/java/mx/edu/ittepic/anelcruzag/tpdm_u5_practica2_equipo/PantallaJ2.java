@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class PantallaJ2 extends AppCompatActivity {
     private DatabaseReference realtime;
     String[] nom = {"", "piedra", "papel", "tijera"};
-    TextView nombre1, listo1, nombre2, listo2, ganador, perdedor, iniciar;
+    TextView nombre1, estado1, nombre2, estado2, ganador, perdedor, iniciar;
     ImageView objeto1, objeto2;
 
     SensorManager sensorManager;
@@ -38,10 +38,10 @@ public class PantallaJ2 extends AppCompatActivity {
         setContentView(R.layout.pantalla_j1);
 
         nombre1 = findViewById(R.id.lblNombre_J1);
-        listo1 = findViewById(R.id.listo1);
+        estado1 = findViewById(R.id.lblEstado_J1);
 
         nombre2 = findViewById(R.id.lblNombre_J2);
-        listo2 = findViewById(R.id.listo2);
+        estado2 = findViewById(R.id.lblEstado_J2);
 
         ganador = findViewById(R.id.lblGanadorJ1);
         perdedor = findViewById(R.id.lblPerdedorJ1);
@@ -72,32 +72,22 @@ public class PantallaJ2 extends AppCompatActivity {
                 if (iniciar.getVisibility() == View.VISIBLE) {
                     if (x < -5 && contador == 0) {
                         contador++;
-                        // Colorear el logo_ppt de color Gris
-                        //getWindow().getDecorView().setBackgroundColor(Color.GRAY);
                     } else if (x > 5 && contador == 1) {
                         contador++;
-                        // Colorear el logo_ppt de color Rojo
-                        //getWindow().getDecorView().setBackgroundColor(Color.RED);
                     }
 
                     if (contador == 2) {
-                        // Reproducir un sonido
-                        //sonido();
                         int num = (int) ((Math.random() * 3) + 1);
                         System.out.println("RANDOM: " + num);
-
                         establecer_img(num);
                         metodoEnviarObjeto("" + num);
                         contador = 0;
-
                     }
                 } else {
                     int id = getResources().getIdentifier("blanco", "drawable", getPackageName());
                     objeto1.setImageResource(id);
                     System.out.println("INVISIBLE");
                 }
-
-
             }// onSensorChanged
 
             @Override
@@ -114,11 +104,8 @@ public class PantallaJ2 extends AppCompatActivity {
     }
 
     private void metodoEnviarObjeto(String num) {
-
-        // Game juego = new Game("", usuario, "", telefono, "", "", "", "1", "NO", "NO");
         System.out.println("Objeto2 " + num);
         realtime.child("lobby").child("juego1").child("objeto2").setValue(num);
-
     }
 
     private void consultarJuegoEnCurso() {
@@ -128,32 +115,21 @@ public class PantallaJ2 extends AppCompatActivity {
         realtime.child("lobby").child("juego1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
                 Juego juego = dataSnapshot.getValue(Juego.class);
-
                 System.out.println("ENTRO1");
 
                 if (juego.ready2.equals("")) {
                     nombre2.setVisibility(View.INVISIBLE);
                     iniciar.setVisibility(View.INVISIBLE);
-                    listo2.setText("Esperando ...");
-                    listo2.setTextColor(Color.rgb(0, 0, 0));
+                    estado2.setText("Esperando ...");
+                    estado2.setTextColor(Color.rgb(0, 0, 0));
                 } else {
-                    listo2.setText("¡Listo!");
+                    estado2.setText("¡Listo!");
                     nombre2.setVisibility(View.VISIBLE);
                     nombre2.setText("" + juego.sobre1);
-                    listo2.setTextColor(Color.rgb(76, 175, 80));
                     iniciar.setVisibility(View.VISIBLE);
                 }
                 nombre1.setText("" + juego.sobre2);
-                if (juego.finish.equals("")) {
-                    // finish();
-                }// if
-
-                metodoGanador(juego.objeto1, juego.objeto2);
-
-                //jugador1
                 if (juego.objeto1.equals("1")) {
                     establecer_img1(1);
                 } else if (juego.objeto1.equals("2")) {
@@ -165,8 +141,6 @@ public class PantallaJ2 extends AppCompatActivity {
                 if (ganador.getVisibility() == View.VISIBLE) {
                     Toast.makeText(PantallaJ2.this, "Terminar el juego!", Toast.LENGTH_LONG).show();
                 }
-
-
             }// onDataChange
 
             @Override
@@ -174,7 +148,6 @@ public class PantallaJ2 extends AppCompatActivity {
 
             }
         });
-
     }// consultarTodos
 
 
@@ -183,8 +156,6 @@ public class PantallaJ2 extends AppCompatActivity {
         System.out.println("OBJETO1: " + objeto1 + " OBJETO2: " + objeto2);
         ganador.setVisibility(View.INVISIBLE);
         perdedor.setVisibility(View.INVISIBLE);
-
-
         switch (objeto1) {
             case "1":
                 if ((objeto1.equals("1") && objeto2.equals("3"))) {

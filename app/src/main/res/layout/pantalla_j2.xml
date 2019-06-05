@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="TU NOMBRE"
+        android:text=""
         android:textAlignment="center"
         android:textSize="20dp"
         />
@@ -50,7 +50,6 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/blanco"
         />
 
     <TextView
@@ -58,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Esperando al retado..."
+        android:text="Esperando..."
         android:textColor="#000"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -70,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="EL OTRO"
+        android:text=""
         android:textAlignment="center"
         android:textSize="20dp"
         />
@@ -81,7 +80,6 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/blanco"
         />
 
     <TextView
